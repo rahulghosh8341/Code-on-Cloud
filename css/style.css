@@ -166,8 +166,17 @@ a {
   height: 40px;
 }
 
+.icon--small {
+  width: 30px;
+  height: 30px;
+}
+
 .icon--primary {
   fill: var(--color-primary);
+}
+
+.icon--white {
+  fill: white;
 }
 
 .icon-container {
@@ -178,6 +187,10 @@ a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+}
+
+.icon-container__accent {
+  background-color: var(--color-accent);
 }
 
 /* Buttons */
@@ -236,6 +249,11 @@ a {
 .btn--outline:hover {
   color: white;
   background-color: var(--color-headings);
+}
+
+.btn--stretched {
+  padding-left: 6rem;
+  padding-right: 6rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -455,5 +473,92 @@ h3.media__title {
   .quote__line {
     position: relative;
     bottom: 15px;
+  }
+}
+
+/* Grid */
+
+.grid {
+  display: grid;
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid--1x3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* testimonial */
+
+.testimonial {
+  padding: 3rem;
+}
+
+.testimonial__image > img {
+  width: 100%;
+}
+
+.testimonial__image {
+  position: relative;
+}
+
+.testimonial__image > .icon-container {
+  position: absolute;
+  top: 3rem;
+  right: -29.5px;
+}
+
+@media screen and (min-width: 768px) {
+  .testimonial .quotes,
+  .testimonial .quote__author {
+    font-size: 2.4rem;
+  }
+  .testimonial .quotes {
+    margin-left: 6rem;
+  }
+}
+
+/* Call out */
+
+.callout {
+  padding: 4rem;
+  border-radius: 5px;
+}
+.callout__content {
+  text-align: center;
+}
+.callout--primary {
+  color: white;
+  background-color: var(--color-primary);
+}
+
+.callout__heading {
+  color: white;
+  margin-top: 0;
+}
+
+.callout .btn {
+  justify-self: center;
+  align-self: center;
+}
+
+@media screen and (min-width: 768px) {
+  .callout .grid--1x2 {
+    /* make the 1st column stretch and take avaiable */
+    grid-template-columns: auto 1fr;
+  }
+  .callout__content {
+    text-align: left;
+  }
+
+  .callout .btn {
+    justify-self: start;
+    margin: 0 2rem;
   }
 }
