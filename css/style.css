@@ -291,8 +291,8 @@ a {
 
 .search-container .btn {
   margin: 4px;
-  padding-left: 1.5rem;
-  padding-right: 1rem;
+  padding-left: 4vw;
+  padding-right: 4vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -320,11 +320,6 @@ a {
   .search::placeholder {
     content: "Enter your preferred language";
   }
-
-  .search-container .btn {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
 }
 
 /* Cards */
@@ -351,8 +346,8 @@ a {
 }
 
 /* Plan */
-.plan{
-    transition: transform .2s ease-out;
+.plan {
+  transition: transform 0.2s ease-out;
 }
 
 .plan__name {
@@ -409,12 +404,12 @@ a {
   right: 5%;
 }
 
-.plan:hover{
-    transform: scale(1.05);
+.plan:hover {
+  transform: scale(1.05);
 }
 
-.plan--popular:hover{
-    transform: scale(1.15);
+.plan--popular:hover {
+  transform: scale(1.15);
 }
 
 @media screen and (min-width: 1024px) {
@@ -443,14 +438,14 @@ a {
   margin: 0 2rem;
   font-size: 2rem;
 }
-.media__body p{
+.media__body p {
   color: #64696c;
 }
 .media__title {
   margin-top: 0;
 }
 
-.media__title-dark{
+.media__title-dark {
   color: white;
 }
 
@@ -557,10 +552,20 @@ a {
   .testimonial .quotes,
   .testimonial .quote__author {
     font-size: 2.4rem;
+    margin-left: 6rem;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
   }
   .testimonial .quotes {
     margin-left: 6rem;
   }
+  .media__body .media__title{
+    margin-left: 0px;
+  }
+
 }
 
 /* Call out */
@@ -644,6 +649,7 @@ a {
 
 .block__heading {
   margin-top: 0;
+  font-size: 5rem;
 }
 
 .block--dark {
@@ -674,6 +680,11 @@ a {
   margin: 0 auto;
 }
 
+@media screen and (min-width: 768px) {
+  .block__heading {
+    font-size: 6rem;
+  }
+}
 /* Navbar */
 
 .nav {
@@ -717,7 +728,8 @@ a {
 }
 
 .nav__brand {
-  transform: translateY(5px);
+  padding-left: 35px;
+  padding-top: 10px;
 }
 
 @media screen and (min-width: 768px) {
@@ -744,7 +756,7 @@ a {
 }
 .hero__tagline {
   color: #b9c3cf;
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: 1px;
   margin: 2rem 0 5rem 0;
 }
@@ -757,6 +769,10 @@ a {
   .hero {
     padding-top: 0;
   }
+  .hero__tagline {
+    font-size: 2rem;
+  }
+
   .hero__content {
     text-align: left;
     align-self: center;
@@ -802,7 +818,7 @@ a {
 
 /* Plans Block */
 
-.block-plans .grid{
+.block-plans .grid {
   gap: 8rem 4rem;
 }
 
@@ -814,31 +830,35 @@ a {
 
 /* Feature block */
 
-.feature{
+.feature {
   gap: 4rem 2rem;
-  margin: 12rem 0;
+  margin: 8rem 0;
 }
 
-.feature:first-of-type{
+.feature:first-of-type {
   margin-top: 6rem;
 }
 
-.feature__heading{
+.feature__heading {
   margin: 1rem 0;
 }
 
-.feature__image{
+.feature__image {
   width: 100%;
 }
-@media screen and (min-width:768px) {
- .feature:nth-of-type(even) .feature__content{
-  order: 2;
- }
+@media screen and (min-width: 768px) {
+  .feature:nth-of-type(even) .feature__content {
+    order: 2;
+  }
 }
 
 /*Showcase */
 .block-showcase__image > img {
   width: 100%;
+}
+
+.block-showcase{
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 94%);
 }
 
 @media screen and (min-width: 768px) {
@@ -853,5 +873,84 @@ a {
   .block-showcase__image > img {
     width: auto;
     max-width: 700px;
+  }
+  .block-showcase{
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
+}
+}
+
+/* Callout */
+
+.callout-signup {
+  transform: translateY(5rem);
+}
+
+/* Footer */
+
+.footer {
+  background-color: #232323;
+  margin-top: 2rem;
+}
+
+.footer a {
+  color: #777;
+  transition: color 0.2s;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+.footer .collapse__heading {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.footer__section {
+  padding: 2rem;
+  border-bottom: 1px solid #393939;
+}
+
+.footer__brand {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.footer__copyright {
+  font-size: 2.1rem;
+  color: #fff;
+  opacity: 0.8;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .footer .grid {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+  .footer li {
+    padding-bottom: 1rem;
+  }
+
+  .footer .collapse__chevron {
+    display: none;
+  }
+  .footer .collapse__content {
+    opacity: 1;
+    max-height: 100%;
+  }
+  .footer__brand {
+    margin-top: 1rem;
+    order: -1;
+  }
+  .footer__copyright {
+    font-size: 1.5rem;
+  }
+  .footer__section {
+    border-bottom: none;
+  }
+
+  .footer .collapse__heading {
+    font-size: 1.6rem;
   }
 }
